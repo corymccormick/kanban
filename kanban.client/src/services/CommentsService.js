@@ -38,7 +38,7 @@ class CommentsService {
       this.getAllCommentsByTaskId(newComment.taskId)
       Notification.toast('Comment Created', 'success')
     } catch (error) {
-      Notification.toast('Error', error, 'error')
+      Notification.toast('Error: ' + error, 'error')
     }
   }
 

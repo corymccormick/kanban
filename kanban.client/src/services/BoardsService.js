@@ -27,7 +27,7 @@ class BoardsService {
       AppState.Boards.push(res.data)
       Notification.toast('Board Created', 'success')
     } catch (error) {
-      Notification.toast('Error', error, 'error')
+      Notification.toast('Error:' + error, 'error')
     }
   }
 

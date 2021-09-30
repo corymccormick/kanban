@@ -92,7 +92,8 @@ export default {
         try {
           await tasksService.createTask(state.newTask)
           Notification.toast('Task Created!', 'success')
-          state.newTask = {}
+          // TODO find new way to clear input field, while NOT throwing away list ID
+          // state.newTask = {}
         } catch (error) {
           Notification.toast('Task not created', 'error')
         }

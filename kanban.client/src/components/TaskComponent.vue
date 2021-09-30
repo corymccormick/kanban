@@ -56,6 +56,7 @@
       </div>
     </div>
   </div>
+  <!-- TODO modal has to be within same element, research on other projects-->
 </template>
 
 <script>
@@ -111,7 +112,8 @@ export default {
         try {
           await commentsService.createComment(state.newComment)
           Notification.toast('Comment Created!', 'success')
-          state.newComment = {}
+          // TODO find new way to clear input field, while NOT throwing away list ID, you dumb donkey
+          // state.newComment = {}
         } catch (error) {
           Notification.toast('Comment not created', 'error')
         }

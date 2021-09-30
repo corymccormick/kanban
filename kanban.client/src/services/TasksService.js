@@ -38,7 +38,7 @@ class TasksService {
       this.getAllTasksByListId(newTask.listId)
       Notification.toast('Task Created', 'success')
     } catch (error) {
-      Notification.toast('Error', error, 'error')
+      Notification.toast('Error:' + error, 'error')
     }
   }
 

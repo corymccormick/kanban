@@ -49,12 +49,12 @@ export default {
       // try {
       //   await tasksService.getAllTasksByListId(props.taskProp.id)
       // } catch (error) {
-      //   Notification.toast('connot get all tasks by ListId', 'error')
+      //   Notification.toast('cannot get all tasks by ListId', 'error')
       // }
       // try {
       //   await commentsService.getAllCommentsByTaskId(props.taskProp.id)
       // } catch (error) {
-      //   Notification.toast('connot get all comments by taskId', 'error')
+      //   Notification.toast('cannot get all comments by taskId', 'error')
       // }
     })
     return {
