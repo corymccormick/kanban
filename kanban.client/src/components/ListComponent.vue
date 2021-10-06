@@ -38,7 +38,6 @@
 import { reactive, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { AppState } from '../AppState'
-// import { boardsService } from '../services/BoardsService'
 import Notification from '../utils/Notification'
 import { listsService } from '../services/ListsService'
 import { tasksService } from '../services/TasksService'

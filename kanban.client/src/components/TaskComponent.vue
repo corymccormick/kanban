@@ -20,51 +20,12 @@
       </div>
     </div>
   </div>
-
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="commentModalLabel">
-            Create Comment
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="form-inline" @submit.prevent="createComment">
-            <div class="form-group m-2">
-              <input type="text"
-                     class="form-control col-12 col-md-12"
-                     aria-describedby="taskInput"
-                     placeholder="Comment Here..."
-                     v-model="state.newComment.body"
-              >
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Post
-            </button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- TODO modal has to be within same element, research on other projects-->
 </template>
 
 <script>
 import { reactive, computed, onMounted } from 'vue'
 import { AppState } from '../AppState'
-// import { boardsService } from '../services/BoardsService'
 import Notification from '../utils/Notification'
-// import { listsService } from '../services/ListsService'
 import { tasksService } from '../services/TasksService'
 import { commentsService } from '../services/CommentsService'
 
@@ -110,18 +71,6 @@ export default {
           Notification.toast('Error: ' + error, 'error')
         }
       }
-
-      // async createComment() {
-      //   try {
-      //     await commentsService.createComment(state.newComment)
-      //     Notification.toast('Comment Created!', 'success')
-      //     // TODO find new way to clear input field, while NOT throwing away list ID, you dumb donkey
-      //     // state.newComment = {}
-      //   } catch (error) {
-      //     console.error(error)
-      //     Notification.toast('Comment not created', 'error')
-      //   }
-      // }
     }
   },
   components: {}

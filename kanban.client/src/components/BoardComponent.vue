@@ -18,9 +18,6 @@ import { reactive, computed } from 'vue'
 import { AppState } from '../AppState'
 import { boardsService } from '../services/BoardsService'
 import Notification from '../utils/Notification'
-// TODO
-// import {listsService} from '../services/ListsService'
-// import Notification from '../utils/Notification'
 
 export default {
   name: 'Boards',

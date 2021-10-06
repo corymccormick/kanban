@@ -5,12 +5,6 @@ import { logger } from '../utils/Logger'
 // import { logger } from '../utils/Logger'
 
 class CommentsService {
-  // async getAllComments() {
-  //   const res = await api.get('api/Comments')
-  //   AppState.Comments = res.data
-  //   logger.log(AppState.Comments)
-  // }
-
   async getAllCommentsByTaskId(taskId) {
     try {
       const res = await api.get(`api/tasks/${taskId}/comments`)
@@ -46,7 +40,6 @@ class CommentsService {
     try {
       await api.delete('api/comments/' + commentProp.id)
       AppState.comments[commentProp.taskId] = AppState.comments[commentProp.taskId].filter(comment => comment.id !== commentProp.id)
-      // this.getAllCommentsBytaskId(commentProp.taskId)
     } catch (error) {
       Notification.toast('Error:' + error, 'error')
     }
