@@ -8,7 +8,7 @@
       </div>
       <div class="col-1 col-md-2">
         <!-- Button trigger modal -->
-        <i class="far fa-comment-dots hvr-raise text-info" type="button" data-toggle="modal" data-target="#commentModal"></i>
+        <i class="far fa-comment-dots hvr-raise text-info" type="button" data-toggle="modal" data-target="#commentModal" @click="setTaskId"></i>
       </div>
       <div class="col-1 col-md-1">
         <i class="fas fa-times text-danger hvr-raise" @click="deleteTask"></i>
@@ -22,7 +22,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModal" aria-hidden="true">
+  <!-- <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- TODO modal has to be within same element, research on other projects-->
 </template>
 
@@ -64,7 +64,6 @@ import { reactive, computed, onMounted } from 'vue'
 import { AppState } from '../AppState'
 // import { boardsService } from '../services/BoardsService'
 import Notification from '../utils/Notification'
-// TODO
 // import { listsService } from '../services/ListsService'
 import { tasksService } from '../services/TasksService'
 import { commentsService } from '../services/CommentsService'
@@ -99,6 +98,10 @@ export default {
     return {
       state,
 
+      setTaskId() {
+        tasksService.setTaskId(props.taskProp.id)
+      },
+
       async deleteTask() {
         try {
           await tasksService.deleteTask(props.taskProp)
@@ -106,18 +109,19 @@ export default {
         } catch (error) {
           Notification.toast('Error: ' + error, 'error')
         }
-      },
-
-      async createComment() {
-        try {
-          await commentsService.createComment(state.newComment)
-          Notification.toast('Comment Created!', 'success')
-          // TODO find new way to clear input field, while NOT throwing away list ID, you dumb donkey
-          // state.newComment = {}
-        } catch (error) {
-          Notification.toast('Comment not created', 'error')
-        }
       }
+
+      // async createComment() {
+      //   try {
+      //     await commentsService.createComment(state.newComment)
+      //     Notification.toast('Comment Created!', 'success')
+      //     // TODO find new way to clear input field, while NOT throwing away list ID, you dumb donkey
+      //     // state.newComment = {}
+      //   } catch (error) {
+      //     console.error(error)
+      //     Notification.toast('Comment not created', 'error')
+      //   }
+      // }
     }
   },
   components: {}

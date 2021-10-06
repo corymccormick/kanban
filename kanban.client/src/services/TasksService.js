@@ -51,6 +51,10 @@ class TasksService {
       Notification.toast('Error:' + error, 'error')
     }
   }
+
+  setTaskId(id) {
+    AppState.activeTask = id
+  }
 }
 
 export const tasksService = new TasksService()

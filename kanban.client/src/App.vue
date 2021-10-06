@@ -4,6 +4,7 @@
   </header>
   <main>
     <router-view />
+    <CommentModal />
   </main>
   <footer>
     <div class="bg-green text-light text-center p-4">

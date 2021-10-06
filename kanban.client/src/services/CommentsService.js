@@ -36,8 +36,8 @@ class CommentsService {
       await api.post('api/comments', newComment)
       // AppState.comments[newComment.taskId] = res.data
       this.getAllCommentsByTaskId(newComment.taskId)
-      Notification.toast('Comment Created', 'success')
     } catch (error) {
+      console.error(error)
       Notification.toast('Error: ' + error, 'error')
     }
   }
